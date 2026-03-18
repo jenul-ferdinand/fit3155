@@ -33,14 +33,14 @@ def zalg(string: str) -> list[int]:
                 print('case 2b + possibly 2c')
                 z[k] = right - k
                 # 2c: extend past right of zbox
-                # if z[k_mirror] == zbox_offset:
-                i = 0
-                while right + i < n and string[right + i] == string[right - k + i]:
-                    i += 1
-                z[k] += i
-                if z[k] > 0:
-                    left = k
-                    right = k + z[k]
+                if z[k_mirror] == zbox_offset:
+                    i = 0
+                    while right + i < n and string[right + i] == string[right - k + i]:
+                        i += 1
+                    z[k] += i
+                    if z[k] > 0:
+                        left = k
+                        right = k + z[k]
 
     
     return z
