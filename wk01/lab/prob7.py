@@ -67,31 +67,36 @@ if __name__ == '__main__':
     correct = 1
     assert length == correct, f'\nExpected {correct},\nGot {length}'
 
-    del length; del correct
+    del length
+    del correct
 
     length = get_suffix_prefix_length(suffstring='aab', prestring='aab')
     correct = 3
     assert length == correct, f'\nExpected {correct},\nGot {length}'
 
-    del length; del correct
+    del length
+    del correct
 
     length = get_suffix_prefix_length(suffstring='aab', prestring='abaa')
     correct = 2
     assert length == correct, f'\nExpected {correct},\nGot {length}'
 
-    del length; del correct
+    del length
+    del correct
 
     length = get_suffix_prefix_length(suffstring='abab', prestring='abab')
     correct = 4
     assert length == correct, f'\nExpected {correct},\nGot {length}'
 
-    del length; del correct
+    del length
+    del correct
 
     length = get_suffix_prefix_length(suffstring='aab', prestring='xyz')
     correct = 0
     assert length == correct, f'\nExpected {correct},\nGot {length}'
 
-    del length; del correct
+    del length
+    del correct
 
     length = get_suffix_prefix_length(suffstring='abcabc', prestring='abcx')
     correct = 3
