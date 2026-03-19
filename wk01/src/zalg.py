@@ -1,5 +1,16 @@
 
 def zalg(string: str) -> list[int]:
+    """
+    Z-Algorithm
+
+    Let n be the size of the input string.
+
+    Time complexity: O(n)
+        We take n iterations to complete the z array.
+    Space complexity: O(n)
+        We create a z array of size n.
+    
+    """
     n = len(string) # 18
     z = [0] * n
     z[0] = n
