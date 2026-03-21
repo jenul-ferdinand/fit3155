@@ -1,4 +1,3 @@
-
 def zalg(string: str) -> list[int]:
     """
     Z-Algorithm
@@ -9,22 +8,22 @@ def zalg(string: str) -> list[int]:
         We take n iterations to complete the z array.
     Space complexity: O(n)
         We create a z array of size n.
-    
+
     """
-    n = len(string) # 18
+    n = len(string)  # 18
     z = [0] * n
     z[0] = n
-    print('set 0th index to n')
+    print("set 0th index to n")
 
     left, right = -1, -1
 
-    for k in range(1,n):
+    for k in range(1, n):
         k_mirror = k - left
         zbox_offset = right - k
-        
+
         # case 1 (k > r)
         if k > right:
-            print('case 1')
+            print("case 1")
             i = 0
             while k + i < n and string[i] == string[k + i]:
                 i += 1
@@ -38,7 +37,9 @@ def zalg(string: str) -> list[int]:
 
             if z[k_mirror] == zbox_offset:
                 i = 0
-                while right + i < n and string[right + i] == string[right - k + i]:
+                while (
+                    right + i < n and string[right + i] == string[right - k + i]
+                ):
                     i += 1
                 z[k] += i
                 if z[k] > 0:
@@ -64,26 +65,26 @@ def zalg(string: str) -> list[int]:
             #             left = k
             #             right = k + z[k]
 
-    
     return z
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     z = zalg("aabcaabxaabcaabcay")
     print(z)
 
-    correct = [18,1,0,0,3,1,0,0,7,1,0,0,5,1,0,0,1,0]
+    correct = [18, 1, 0, 0, 3, 1, 0, 0, 7, 1, 0, 0, 5, 1, 0, 0, 1, 0]
     assert z[0] == correct[0]
-    assert z == correct, f'\nExpected {correct},\nGot      {z}'
+    assert z == correct, f"\nExpected {correct},\nGot      {z}"
 
     del z
     del correct
-    print('\n')
+    print("\n")
 
     z = zalg("abaaba")
     print(z)
-    
-    correct = [6,0,1,3,0,1]
-    assert z == correct, f'\nExpected {correct},\nGot      {z}'
+
+    correct = [6, 0, 1, 3, 0, 1]
+    assert z == correct, f"\nExpected {correct},\nGot      {z}"
 
     del z
     del correct
